@@ -1,0 +1,225 @@
+this is my source code what shoul i add more to be its the best bio of a
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pinaka malupit sa lahat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{
+    min-height:100vh;
+    background:radial-gradient(circle at top,#0b0b0b,#000);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    overflow:hidden;
+}
+
+/* ENTER SCREEN */
+.enter-screen{
+    position:fixed;inset:0;
+    background:radial-gradient(circle,#0a0a0a,#000);
+    display:flex;align-items:center;justify-content:center;
+    z-index:9999;
+    backdrop-filter: blur(8px);
+}
+.enter-btn{
+    padding:18px 60px;
+    border:1px solid rgba(255,255,255,0.25);
+    color:white;
+    background:rgba(255,255,255,0.03);
+    font-size:18px;
+    letter-spacing:4px;
+    cursor:pointer;
+    border-radius:60px;
+    backdrop-filter:blur(18px);
+    box-shadow:0 0 60px rgba(255,255,255,0.15), inset 0 0 30px rgba(255,255,255,0.08);
+    animation:luxPulse 3.5s infinite;
+}
+@keyframes luxPulse{0%,100%{box-shadow:0 0 40px rgba(255,255,255,0.15);}50%{box-shadow:0 0 80px rgba(255,255,255,0.25);}}
+
+/* CINEMATIC PARTICLES */
+.particles span{position:absolute;width:2px;height:2px;background:white;opacity:.18;animation:float 22s linear infinite;}
+@keyframes float{from{transform:translateY(110vh);}to{transform:translateY(-15vh);}}
+
+/* LUXURY GLASS CARD */
+.card{
+    width:430px;
+    background:rgba(255,255,255,0.035);
+    border-radius:30px;
+    padding:28px;
+    backdrop-filter: blur(28px);
+    border:1px solid rgba(255,255,255,0.10);
+    box-shadow:
+        0 0 120px rgba(255,255,255,0.06),
+        inset 0 0 40px rgba(255,255,255,0.05);
+    position:relative;
+    overflow:hidden;
+    animation:fadeIn 1.6s ease;
+}
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+/* MULTI-LAYER GLASS SHINE */
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-150%;
+    background:linear-gradient(120deg,transparent 45%,rgba(255,255,255,0.10),transparent 55%);
+    animation:luxShine 10s infinite linear;
+}
+.card::after{
+    content:"";
+    position:absolute;
+    inset:-150%;
+    background:linear-gradient(60deg,transparent 46%,rgba(255,255,255,0.06),transparent 54%);
+    animation:luxShine2 14s infinite linear;
+}
+@keyframes luxShine{from{transform:translateX(-40%);}to{transform:translateX(40%);}}
+@keyframes luxShine2{from{transform:translateX(40%);}to{transform:translateX(-40%);}}
+
+.profile{display:flex;align-items:center;gap:16px;position:relative;z-index:2;}
+
+.avatar{
+    width:76px;height:76px;border-radius:50%;overflow:hidden;
+    border:2px solid rgba(255,255,255,0.30);
+    box-shadow:0 0 40px rgba(255,255,255,0.20);
+    animation:luxGlow 5s infinite ease-in-out;
+}
+@keyframes luxGlow{0%,100%{box-shadow:0 0 25px rgba(255,255,255,0.18);}50%{box-shadow:0 0 55px rgba(255,255,255,0.28);}}
+.avatar img{width:100%;height:100%;object-fit:cover;}
+
+.name{font-size:22px;font-weight:600;letter-spacing:.8px;}
+.verify{width:18px;height:18px;background:#fff;color:#000;border-radius:50%;font-size:12px;display:flex;align-items:center;justify-content:center;}
+.views{margin-top:6px;font-size:13px;opacity:.6;}
+
+/* SOCIAL ICONS */
+.socials{display:flex;gap:20px;margin:22px 0 12px;position:relative;z-index:2;}
+.socials a{color:white;font-size:22px;opacity:.65;transition:.4s;}
+.socials a:hover{opacity:1;transform:translateY(-6px) scale(1.2);}
+
+/* PLAYER */
+.player{
+    margin-top:20px;
+    background:rgba(255,255,255,0.065);
+    border-radius:22px;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    position:relative;z-index:2;
+    box-shadow:
+        inset 0 0 35px rgba(255,255,255,.18),
+        0 0 40px rgba(255,255,255,.05);
+}
+.music-icon{font-size:22px;opacity:.75;}
+.controls{flex:1;}
+.time{display:flex;justify-content:space-between;font-size:12px;opacity:.55;}
+.progress{width:100%;height:5px;background:rgba(255,255,255,0.20);border-radius:10px;margin:10px 0;overflow:hidden;}
+.bar{width:0%;height:100%;background:white;box-shadow:0 0 18px rgba(255,255,255,0.9);}
+.play-btn{font-size:22px;cursor:pointer;opacity:.75;transition:.35s;}
+.play-btn:hover{opacity:1;transform:scale(1.2);} 
+</style>
+</head>
+<body>
+
+<!-- ENTER SCREEN -->
+<div class="enter-screen" id="enterScreen">
+    <button class="enter-btn" id="enterBtn">ENTER</button>
+</div>
+
+<!-- CINEMATIC PARTICLES -->
+<div class="particles">
+  <span style="left:5%;animation-delay:0s"></span>
+  <span style="left:15%;animation-delay:4s"></span>
+  <span style="left:25%;animation-delay:8s"></span>
+  <span style="left:35%;animation-delay:3s"></span>
+  <span style="left:45%;animation-delay:7s"></span>
+  <span style="left:55%;animation-delay:12s"></span>
+  <span style="left:65%;animation-delay:5s"></span>
+  <span style="left:75%;animation-delay:10s"></span>
+  <span style="left:85%;animation-delay:2s"></span>
+</div>
+
+<div class="card">
+
+    <div class="profile">
+        <div class="avatar">
+            <img src="https://cdn.discordapp.com/attachments/1375095228125679659/1469617443210264679/crest.jpg?ex=6988f826&is=6987a6a6&hm=ed6878406d378bb0633517b3bc7cfc4c5b8ed15e92867df47901d77b14747816&">
+        </div>
+        <div>
+            <div class="name">Joaquim Sagat <div class="verify">✓</div></div>
+            <div class="views"><i class="fa-solid fa-eye"></i> <span id="viewCount">3,205</span></div>
+        </div>
+    </div>
+
+    <div class="socials">
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://instagram.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://t.me/yourusername" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+    </div>
+
+    <div class="player">
+        <div class="music-icon"><i class="fa-solid fa-music"></i></div>
+        <div class="controls">
+            <div class="time"><span id="current">0:00</span><span id="duration">0:00</span></div>
+            <div class="progress"><div class="bar" id="bar"></div></div>
+        </div>
+        <div class="play-btn" id="playBtn"><i class="fa-solid fa-pause"></i></div>
+    </div>
+
+    <audio id="audio" loop>
+        <source src="GURDSTA - Crestt tpk (Gztyle).mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<script>
+const audio=document.getElementById('audio');
+const playBtn=document.getElementById('playBtn');
+const bar=document.getElementById('bar');
+const current=document.getElementById('current');
+const duration=document.getElementById('duration');
+const enterBtn=document.getElementById('enterBtn');
+const enterScreen=document.getElementById('enterScreen');
+const viewEl=document.getElementById('viewCount');
+
+/* VIEW COUNTER */
+let views = localStorage.getItem('profileViews');
+if(!views){
+    views = 3205; // start value
+}
+viewEl.textContent = Number(views).toLocaleString();
+
+enterBtn.onclick=()=>{
+    enterScreen.style.opacity='0';
+    setTimeout(()=>{enterScreen.style.display='none';},800);
+
+    // increment views on enter
+    views = Number(views) + 1;
+    localStorage.setItem('profileViews', views);
+    viewEl.textContent = views.toLocaleString();
+
+    audio.play();
+};
+
+playBtn.onclick=()=>{
+ if(!audio.paused){audio.pause();playBtn.innerHTML='<i class="fa-solid fa-play"></i>';} 
+ else{audio.play();playBtn.innerHTML='<i class="fa-solid fa-pause"></i>';} 
+}
+
+audio.addEventListener('loadedmetadata',()=>{duration.textContent=format(audio.duration);});
+audio.addEventListener('timeupdate',()=>{
+ bar.style.width=(audio.currentTime/audio.duration)*100+'%';
+ current.textContent=format(audio.currentTime);
+});
+
+function format(t){const m=Math.floor(t/60);const s=Math.floor(t%60).toString().padStart(2,'0');return `${m}:${s}`;}
+</script>
+
+</body>
+</html>
